@@ -1,0 +1,14 @@
+step,issue,action,rows_affected
+1,Exact duplicate records,Removed duplicates,60
+2,Text units inside numeric column (vehicle_count),"Stripped non-numeric characters, converted to numeric",16
+3,Inconsistent weather labels (case / stray spaces),Trimmed and standardised to Title Case,328
+4a,"Impossible speed (<=0 or >120 km/h, sensor error)","Set to NA, imputed in step 5",12
+4b,Impossible hourly vehicle count (<0 or >6000),"Set to NA, imputed in step 5",8
+4c,Impossible queue length (<0 or >2000 m),"Set to NA, imputed in step 5",7
+5,Missing avg_speed_kmph,Median of same hour-of-day and weekday/weekend group,82
+5,Missing vehicle_count,Median of same hour-of-day and weekday/weekend group,63
+5,Missing queue_length_m,Median of same hour-of-day and weekday/weekend group,67
+5,Missing heavy_vehicle_pct,Median of same hour-of-day and weekday/weekend group,45
+5,Missing weather,Inferred from rainfall_mm; otherwise most frequent category,40
+5,Missing congestion_level (target),"Predicted with decision tree on delay, speed, queue, volume",30
+6,Feature engineering,"Added hour, day_name, month_name, period, green_ratio, is_congested, rain_flag, incident_any",4392

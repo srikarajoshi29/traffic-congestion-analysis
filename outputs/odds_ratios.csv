@@ -1,0 +1,17 @@
+term,odds_ratio,p_value
+(Intercept),0,0.958
+vehicle_count,128164992923.9,3.34e-16
+heavy_vehicle_pct,11.45,8.3e-7
+pedestrian_count,0.86,0.683
+green_ratio,0.01,3.37e-15
+rain_flag,390284.7,7.21e-15
+road_work,250193504.27,7.31e-15
+accident,6836514208.31,5.91e-8
+signal_fault,1291704506373.79,6.67e-12
+event_nearby,0.07,0.219
+illegal_parking,3018.09,6.31e-14
+is_weekend,1.3,0.737
+is_holiday,26.75,0.219
+periodMidday,97007.38,0.99
+periodMorning Peak,486531.46,0.989
+periodEvening Peak,457722.53,0.989

@@ -1,0 +1,16 @@
+term,pct_change_in_delay,p_value,label
+vehicle_count,219.6,6.879999999999998e-162,Traffic volume (+1 SD)
+heavy_vehicle_pct,34,4.67e-38,Heavy-vehicle share (+1 SD)
+pedestrian_count,-8.9,0.00111,Pedestrian volume (+1 SD)
+green_ratio,-13.7,7.37e-22,Green-time ratio (+1 SD)
+rain_flag,52.2,1.8100000000000002e-21,Rain
+road_work,226.4,3.8099999999999996e-47,Road work
+accident,153.8,2.19e-8,Accident
+signal_fault,117.2,4.78e-6,Signal fault
+event_nearby,22.3,0.157,Nearby event
+illegal_parking,36.2,4.64e-14,Illegal parking
+is_weekend,-9.8,0.00782,Weekend
+is_holiday,1.9,0.847,Public holiday
+periodMidday,-42.7,5.85e-22,Midday (vs night)
+periodMorning Peak,15.6,0.0724,Morning peak (vs night)
+periodEvening Peak,35,0.00109,Evening peak (vs night)

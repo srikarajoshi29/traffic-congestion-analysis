@@ -1,0 +1,111 @@
+=== STRUCTURE ===
+Rows: 4,392
+Columns: 29
+$ record_id         <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1~
+$ timestamp         <dttm> 2026-04-01 00:00:00, 2026-04-01 01:00:00, 2026-04-0~
+$ date              <date> 2026-03-31, 2026-03-31, 2026-03-31, 2026-03-31, 202~
+$ hour              <dbl> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15~
+$ day_name          <fct> Wednesday, Wednesday, Wednesday, Wednesday, Wednesda~
+$ month_name        <fct> Apr, Apr, Apr, Apr, Apr, Apr, Apr, Apr, Apr, Apr, Ap~
+$ period            <fct> Off-Peak/Night, Off-Peak/Night, Off-Peak/Night, Off-~
+$ is_weekend        <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ is_holiday        <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ vehicle_count     <dbl> 108, 128, 140, 116, 150, 353, 446, 614, 1214, 1572, ~
+$ avg_speed_kmph    <dbl> 37.4, 38.7, 36.9, 33.5, 34.4, 35.2, 33.9, 30.3, 21.4~
+$ queue_length_m    <dbl> 42, 25, 0, 61, 15, 46, 34, 63, 101, 306, 414, 211, 1~
+$ delay_min         <dbl> 0.2, 0.4, 0.7, 2.0, 0.7, 1.2, 0.9, 0.2, 1.6, 7.2, 7.~
+$ heavy_vehicle_pct <dbl> 24.8, 19.3, 18.9, 21.0, 26.6, 17.3, 18.2, 10.0, 9.1,~
+$ pedestrian_count  <dbl> 193, 81, 231, 214, 233, 217, 266, 233, 365, 451, 316~
+$ signal_cycle_s    <dbl> 110, 110, 110, 110, 110, 110, 110, 150, 150, 150, 15~
+$ green_time_s      <dbl> 48, 45, 47, 41, 48, 50, 49, 59, 65, 65, 55, 63, 65, ~
+$ green_ratio       <dbl> 0.436, 0.409, 0.427, 0.373, 0.436, 0.455, 0.445, 0.3~
+$ rainfall_mm       <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ weather           <chr> "Clear", "Clear", "Clear", "Clear", "Clear", "Clear"~
+$ rain_flag         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ road_work         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ accident          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ signal_fault      <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ event_nearby      <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ illegal_parking   <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0~
+$ incident_any      <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+$ congestion_level  <fct> Low, Low, Low, Low, Low, Low, Low, Low, Moderate, Mo~
+$ is_congested      <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0~
+
+=== SUMMARY (key variables) ===
+ vehicle_count    avg_speed_kmph  queue_length_m   delay_min     
+ Min.   :  47.0   Min.   : 3.00   Min.   :   0   Min.   : 0.200  
+ 1st Qu.: 336.0   1st Qu.:19.27   1st Qu.:  30   1st Qu.: 0.300  
+ Median : 749.0   Median :28.40   Median :  49   Median : 1.000  
+ Mean   : 759.3   Mean   :25.83   Mean   : 148   Mean   : 3.383  
+ 3rd Qu.:1126.0   3rd Qu.:34.80   3rd Qu.: 151   3rd Qu.: 2.825  
+ Max.   :2052.0   Max.   :43.10   Max.   :1981   Max.   :53.700  
+ heavy_vehicle_pct  green_ratio    
+ Min.   : 2.00     Min.   :0.3600  
+ 1st Qu.:10.00     1st Qu.:0.3870  
+ Median :13.40     Median :0.4130  
+ Mean   :15.38     Mean   :0.4106  
+ 3rd Qu.:21.80     3rd Qu.:0.4360  
+ Max.   :36.80     Max.   :0.4640  
+
+=== CONGESTION LEVEL SHARE ===
+
+     Low Moderate     High   Severe 
+    60.7     24.3      9.6      5.4 
+
+=== BY PERIOD ===
+# A tibble: 4 x 7
+  period    hours avg_vehicles avg_speed avg_queue_m avg_delay_min pct_congested
+  <fct>     <int>        <dbl>     <dbl>       <dbl>         <dbl>         <dbl>
+1 Morning ~   732         1273      15.3         320           7.5          39.3
+2 Midday      915          833      25.4          72           1.4           2.3
+3 Evening ~   732         1354      13.2         379           9.1          47.5
+4 Off-Peak~  2013          323      34.4          36           0.7           0  
+
+=== % HOURS CONGESTED (High/Severe) WITH vs WITHOUT EACH FACTOR ===
+           factor pct_Without pct_With delay_Without delay_With n_Without
+1       Road work        13.4     53.0           3.0       13.2      4224
+2    Signal fault        14.7     50.0           3.3       12.1      4358
+3 Illegal parking        11.6     29.0           2.8        5.9      3546
+4            Rain        13.4     24.7           3.0        5.7      3776
+5        Accident        14.9     25.7           3.4        6.3      4357
+6    Nearby event        14.9     16.3           3.4        5.3      4343
+7  Public holiday        15.3      2.5           3.4        1.2      4272
+8         Weekend        19.6      3.2           4.1        1.5      3144
+  n_With uplift_pp
+1    168      39.5
+2     34      35.3
+3    846      17.3
+4    616      11.3
+5     35      10.8
+6     49       1.4
+7    120     -12.8
+8   1248     -16.4
+
+=== CORRELATION WITH delay_min ===
+        delay_min    queue_length_m     vehicle_count  pedestrian_count 
+             1.00              0.98              0.67              0.50 
+        road_work   illegal_parking       rainfall_mm      signal_fault 
+             0.33              0.21              0.15              0.13 
+         accident       green_ratio heavy_vehicle_pct    avg_speed_kmph 
+             0.04             -0.11             -0.26             -0.78 
+null device 
+          1 
+
+=== MONTHLY TREND ===
+  month_name  pct delay
+1        Apr 13.5   3.0
+2        May 12.1   2.8
+3        Jun 17.1   3.7
+4        Jul 16.4   3.5
+5        Aug 15.3   3.6
+6        Sep 15.4   3.6
+
+=== TOP 5 WORST HOURS OF DAY (avg delay, min) ===
+  hour avg_delay avg_speed
+1   18      13.2       9.0
+2   19      12.4       9.9
+3   10      11.7      10.5
+4    9       8.9      13.0
+5   11       7.1      15.5
+
+Figures saved to figures/

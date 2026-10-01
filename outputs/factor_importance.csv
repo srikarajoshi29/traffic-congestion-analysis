@@ -1,0 +1,14 @@
+factor,ss,label,share_pct
+vehicle_count,587.8927727979335,Traffic volume,46.7
+period,175.66790460987204,Time period,13.9
+road_work,152.2432231059147,Road work,12.1
+heavy_vehicle_pct,120.9318061448298,Heavy-vehicle share,9.6
+green_ratio,66.30739835501254,Green-time ratio,5.3
+rain_flag,65.01365031317982,Rain,5.2
+illegal_parking,40.61143674938603,Illegal parking,3.2
+accident,22.269721698869034,Accident,1.8
+signal_fault,14.853800004882942,Signal fault,1.2
+pedestrian_count,7.533609108797464,Pedestrian volume,0.6
+is_weekend,5.010709556237089,Weekend,0.4
+event_nearby,1.4206955687191112,Nearby event,0.1
+is_holiday,0.026178050971338962,Public holiday,0

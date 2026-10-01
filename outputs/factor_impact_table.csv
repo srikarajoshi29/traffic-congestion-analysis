@@ -1,0 +1,9 @@
+factor,pct_Without,pct_With,delay_Without,delay_With,n_Without,n_With,uplift_pp
+Road work,13.4,53,3,13.2,4224,168,39.5
+Signal fault,14.7,50,3.3,12.1,4358,34,35.3
+Illegal parking,11.6,29,2.8,5.9,3546,846,17.3
+Rain,13.4,24.7,3,5.7,3776,616,11.3
+Accident,14.9,25.7,3.4,6.3,4357,35,10.8
+Nearby event,14.9,16.3,3.4,5.3,4343,49,1.4
+Public holiday,15.3,2.5,3.4,1.2,4272,120,-12.8
+Weekend,19.6,3.2,4.1,1.5,3144,1248,-16.4

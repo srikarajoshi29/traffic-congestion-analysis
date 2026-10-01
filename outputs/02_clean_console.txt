@@ -1,0 +1,60 @@
+== RAW DATA ==
+Rows: 4452  Columns: 19 
+Missing values per column (raw):
+        record_id         timestamp     vehicle_count    avg_speed_kmph 
+                0                 0                55                72 
+   queue_length_m         delay_min    signal_cycle_s      green_time_s 
+               61                 0                 0                 0 
+heavy_vehicle_pct  pedestrian_count       rainfall_mm           weather 
+               46                 0                 0                42 
+        road_work          accident      event_nearby   illegal_parking 
+                0                 0                 0                 0 
+     signal_fault        is_holiday  congestion_level 
+                0                 0                30 
+
+== CLEAN DATA ==
+Rows: 4392  Columns: 29  Missing cells: 0 
+   step                                             issue
+1     1                           Exact duplicate records
+2     2  Text units inside numeric column (vehicle_count)
+3     3 Inconsistent weather labels (case / stray spaces)
+4    4a Impossible speed (<=0 or >120 km/h, sensor error)
+5    4b     Impossible hourly vehicle count (<0 or >6000)
+6    4c           Impossible queue length (<0 or >2000 m)
+7     5                            Missing avg_speed_kmph
+8     5                             Missing vehicle_count
+9     5                            Missing queue_length_m
+10    5                         Missing heavy_vehicle_pct
+11    5                                   Missing weather
+12    5                 Missing congestion_level (target)
+13    6                               Feature engineering
+                                                                                         action
+1                                                                            Removed duplicates
+2                                         Stripped non-numeric characters, converted to numeric
+3                                                        Trimmed and standardised to Title Case
+4                                                                  Set to NA, imputed in step 5
+5                                                                  Set to NA, imputed in step 5
+6                                                                  Set to NA, imputed in step 5
+7                                          Median of same hour-of-day and weekday/weekend group
+8                                          Median of same hour-of-day and weekday/weekend group
+9                                          Median of same hour-of-day and weekday/weekend group
+10                                         Median of same hour-of-day and weekday/weekend group
+11                                  Inferred from rainfall_mm; otherwise most frequent category
+12                                  Predicted with decision tree on delay, speed, queue, volume
+13 Added hour, day_name, month_name, period, green_ratio, is_congested, rain_flag, incident_any
+   rows_affected
+1             60
+2             16
+3            328
+4             12
+5              8
+6              7
+7             82
+8             63
+9             67
+10            45
+11            40
+12            30
+13          4392
+
+Saved: CSV + XLSX in data/clean/
